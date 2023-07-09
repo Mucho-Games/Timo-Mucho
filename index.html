@@ -6,14 +6,6 @@
     <title>Unity WebGL Player | Tabletop-ort</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-            <style>
-    @media only screen and (orientation:portrait){
-        body{
-            height: 100vw;
-            transform: rotate(90deg);
-        }
-    }
-    </style>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -64,11 +56,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Build 07-07 3.0.loader.js";
+      var loaderUrl = buildUrl + "/build-04.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Build 07-07 3.0.data.unityweb",
-        frameworkUrl: buildUrl + "/Build 07-07 3.0.framework.js.unityweb",
-        codeUrl: buildUrl + "/Build 07-07 3.0.wasm.unityweb",
+        dataUrl: buildUrl + "/build-04.data.unityweb",
+        frameworkUrl: buildUrl + "/build-04.framework.js.unityweb",
+        codeUrl: buildUrl + "/build-04.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Mucho Games",
         productName: "Tabletop-ort",
