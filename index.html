@@ -10,10 +10,10 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas" width=1024 height=576></canvas>
       <div id="dragup">
         <div id="dragupinternal"></div>
-      </div>      
+      </div>
       <div id="unity-loading-bar-container">
         <div id="unity-loading-bar">
           <div id="unity-progress-bar-empty">
@@ -21,11 +21,14 @@
           </div>
         </div>
       </div>
+      <div id="turnphone">
+        <div id="turnphoneinternal"></div>
+      </div>        
       <div id="unity-warning"> </div>
       <div id="unity-footer" style="display:none">
         <div id="unity-fullscreen-button"></div>
       </div>
-      <div id="scroll-generator" style="height:110vh; width: 100%;">
+      <div id="scroll-generator" style="height:20000vh; width: 100%;">
       </div>      
     </div>
     <script>
@@ -37,7 +40,8 @@
       var warningBanner = document.querySelector("#unity-warning");
       var scrollGenerator = document.querySelector("#scroll-generator");
       var loadingBarContainer = document.querySelector("#unity-loading-bar-container");
-
+      var dragup = document.querySelector("#dragup");
+      var turnPhone = document.querySelector('#turnphone');
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
       // If type=='warning', a yellow highlight color is used.
@@ -63,11 +67,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/build 08.loader.js";
+      var loaderUrl = buildUrl + "/new order build.loader.js";
       var config = {
-        dataUrl: buildUrl + "/build 08.data.unityweb",
-        frameworkUrl: buildUrl + "/build 08.framework.js.unityweb",
-        codeUrl: buildUrl + "/build 08.wasm.unityweb",
+        dataUrl: buildUrl + "/new order build.data.unityweb",
+        frameworkUrl: buildUrl + "/new order build.framework.js.unityweb",
+        codeUrl: buildUrl + "/new order build.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Mucho Games",
         productName: "Tabletop-ort",
@@ -93,6 +97,8 @@
 
         config.devicePixelRatio = 1;
 
+        scrollGenerator.style.display='block';
+        var dragupDisplayVisible = 'block';
         var lastWidth = window.innerWidth;
         var lastHeight = window.innerHeight;
         function updateSize(){
@@ -119,26 +125,26 @@
             updateSize();
           }
           if (window.innerHeight < window.innerWidth){
+            turnPhone.style.display = 'none';
             if (canvas.clientHeight > window.innerHeight){
-              dragup.style.display = 'block';
-              scrollGenerator.style.display='block';
+              dragup.style.display = dragupDisplayVisible;
             }
             else {
               dragup.style.display = 'none';
-              scrollGenerator.style.display='none';
             }
           }  
           else {
+            turnPhone.style.display = dragupDisplayVisible;
             dragup.style.display = 'none';
-            scrollGenerator.style.display='none';
           }                  
         }, 500);               
 
       } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        turnPhone.style.display = 'none';
+        dragup.style.display = 'none';
+        scrollGenerator.style.display='none';
+        canvas.style.width = "1024px";
+        canvas.style.height = "576px";
       }
 
       loadingBar.style.display = "block";
