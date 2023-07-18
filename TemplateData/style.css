@@ -14,8 +14,41 @@ body { padding: 0; margin: 0 }
 #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
 #unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('full-screen-arrow-icon.svg') no-repeat center }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px;  display: none;}
-#dragup { position: fixed; left: 50%; top: 0; transform: translate(-50%);  display:none}
-#dragupinternal { width:80px; height:80px; background: url('/TemplateData/Drag-Up-icon.svg'); background-position: center; background-size: cover; padding: 10px;}
-#turnphone { position: fixed; left: 0; top: 0; width:100vh; height:100vh; display:none; background-color:black}
-#turnphoneinternal { width:200px; height:200px; background: url('/TemplateData/rotatephone.svg'); background-position: center; background-size: cover; padding: 10px;}
+
+#dragup 
+{ 
+    position: fixed; 
+    left: 50%; top: 0; 
+    transform: translate(-50%); 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display:none
+}
+#dragupinternal 
+{ 
+    width: 100%; 
+    height: 130px; 
+    background-repeat: no-repeat !important;
+    background: url('/TemplateData/Drag-Up-icon.svg'); 
+    background-position: center; 
+    background-size: contain; 
+    padding: 10px;
+    margin-top: 60px;
+}
+#turnphone 
+{ 
+    position: fixed; left: 0; top: 0; width:100vh; height:100vh; display:none; background-color:black
+}
+#turnphoneinternal {
+    width: 100vw;
+    height: 30%;
+    background: url('/TemplateData/rotatephone.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
 #scroll-generator {display: none;}
